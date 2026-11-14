@@ -77,6 +77,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\problems\p2013_majority.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\problems\p2013_majority.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />

@@ -9,10 +9,21 @@ cpp-408-practice/
 ├── cpp-408-practice.sln            # Visual Studio 解决方案，双击打开
 ├── cpp-408-practice.vcxproj        # 项目配置（C++17 / x64 / v143）
 ├── src/
-│   └── main.cpp                    # 练习代码入口
+│   ├── main.cpp                    # 练习代码入口
+│   └── problems/                   # 按真题编号组织的解题代码
+│       ├── p2013_majority.h
+│       └── p2013_majority.cpp
 ├── notes/                          # 学习笔记（Markdown）
 └── README.md
 ```
+
+## 已收录题目
+
+| 编号 | 题目 | 考点 | 复杂度 |
+|---|---|---|---|
+| 2013-41 | 求主元素 | 摩尔投票法（Boyer-Moore） | 时间 O(n) / 空间 O(1) |
+
+每道题目文件里都包含：完整题面注释 → 参考解法 → 边界用例 → 与暴力解法随机对拍。
 
 ## 环境
 
@@ -43,11 +54,13 @@ msbuild cpp-408-practice.sln /p:Configuration=Debug /p:Platform=x64
 x64\Debug\cpp-408-practice.exe
 ```
 
-或者不建工程、单文件直编：
+## 新增一道题的做法
 
-```bat
-cl /nologo /std:c++17 /utf-8 /EHsc src\main.cpp
-```
+1. 在 `src\problems\` 下新建 `p<年份>_<题号>_<名字>.h` 和 `.cpp`
+2. 头文件里声明 `void runP<年份><题号>();`
+3. 在 `main.cpp` 里 `#include` 并调用
+4. 在 VS 中右键项目 → 添加 → 现有项，把新文件加进工程
+5. 同步更新本文件「已收录题目」表格
 
 ## 编码注意事项
 
@@ -59,6 +72,7 @@ MSVC 在中文 Windows（代码页 936）下会把无 BOM 的 UTF-8 中文注释
 
 ## 计划
 
+- [x] 数据结构：2013 真题 · 主元素
 - [ ] 数据结构：顺序表、链表、栈、队列、树、图
 - [ ] 排序与查找算法实现
 - [ ] 操作系统：进程调度、页面置换模拟
@@ -68,6 +82,6 @@ MSVC 在中文 Windows（代码页 936）下会把无 BOM 的 UTF-8 中文注释
 
 ```bat
 git add -A
-git commit -m "完成顺序表逆置"
+git commit -m "完成 2013-41 主元素"
 git push
 ```

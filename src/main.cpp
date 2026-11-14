@@ -2,6 +2,8 @@
 #include <vector>
 #include <string>
 
+#include "problems/p2013_majority.h"
+
 // ---------------------------------------------------------------
 // 408 刷题练习入口
 // 每道题写成一个函数，在 main() 里调用并打印结果
@@ -9,7 +11,7 @@
 //      会按 GBK 解析中文注释而报语法错误
 // ---------------------------------------------------------------
 
-// 示例：顺序表逆置（数据结构 · 线性表）
+// 热身：顺序表逆置（数据结构 · 线性表）
 void reverseArray(std::vector<int>& a) {
     int i = 0, j = static_cast<int>(a.size()) - 1;
     while (i < j) {
@@ -28,10 +30,14 @@ void printArray(const std::vector<int>& a, const std::string& label) {
 }
 
 int main() {
+    // ---- 热身：顺序表逆置 ----
     std::vector<int> data = { 1, 2, 3, 4, 5, 6, 7 };
     printArray(data, "before");
     reverseArray(data);
     printArray(data, "after ");
+
+    // ---- 真题练习 ----
+    runP2013Majority();
 
     std::cout << "\nEnvironment OK. Ready for 408 practice." << std::endl;
     return 0;
